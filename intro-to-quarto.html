@@ -341,8 +341,7 @@
 <ul>
 <li>Explain what is Quarto and how it works</li>
 <li>Brief demonstration</li>
-<li>Instructions to up Quarto on your computer</li>
-<li>If we have time, show websites, books and other presentations created with Quarto</li>
+<li>Show a website, book and how this presentation was created with Quarto</li>
 </ul>
 <div class="footer">
 <p>Photo credit: Allison Horst</p>
@@ -383,6 +382,10 @@
 <p>Photo credit: Allison Horst</p>
 </div>
 </section>
+<section id="plotting-with-ggplot" class="slide level2">
+<h2>Plotting with <code>ggplot</code></h2>
+
+<img data-src="intro-to-quarto_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
 <section id="how-it-works" class="slide level2">
 <h2>How it works?</h2>
 <ul>
@@ -399,9 +402,8 @@
 </section>
 <section id="whats-all-the-jargon-1" class="slide level2">
 <h2>What’s all the jargon?</h2>
-<ul>
-<li><strong>Command line?</strong></li>
-</ul>
+<p><br></p>
+<p><strong>Command line</strong></p>
 <p>The command line is a text interface for your computer.</p>
 <aside class="notes">
 <p>Instead of clicking on a button on to tell your computer what to do, you tell the your computer what to do by typing out the command. The space where you type in the commands is called terminal. I’ll try to show this when we do the demonstration</p>
@@ -416,20 +418,36 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<ul>
-<li>Markdown?</li>
-</ul>
 </section>
-<section id="but-how-it-really-works" class="slide level2">
-<h2>But, how it really works?</h2>
-<p>Let’s take a tour…</p>
+<section id="whats-all-the-jargon-2" class="slide level2">
+<h2>What’s all the jargon?</h2>
+<p><br></p>
+<p><strong>Markdown</strong></p>
+<p>Markdown is a lightweight markup language for creating formatted text using a plain-text editor</p>
+<aside class="notes">
+<p>It’s is own language that allows you to format text using a plain text editor. I hope this will all make sense with the demonstration.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
+<section id="lets-take-a-tour" class="slide level2">
+<h2>Let’s take a tour…</h2>
+
+<img data-src="images/horst_quarto_penguins_teach.png" alt="teaching-quarto" class="r-stretch"></section>
 <section id="set-up-quarto" class="slide level2">
 <h2>Set up Quarto</h2>
 <ul>
 <li><p>Make sure you are using the most up-to-date version of RStudio. Check by clicking on the Help button on the top menu, Check for updates.</p></li>
 <li><p>Install Quarto from <a href="https://quarto.org/docs/get-started/">quarto.org</a></p></li>
-<li><p>Once Quarto is installed open RStudio and you should be able to crete a new Qmd file.</p></li>
+<li><p>Once Quarto is installed open RStudio and you should be able to create a new Qmd file.</p></li>
 </ul>
 </section>
 <section id="resources" class="slide level2">
@@ -649,6 +667,48 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
