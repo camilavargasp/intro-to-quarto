@@ -130,3 +130,13 @@ I hope this will all make sense with the demonstration.
 -   Once Quarto is installed open RStudio and you should be able to create a new Qmd file.
 
 ## Resources
+
+-   <https://quarto.org/>
+-   [Openscapes Quarto Keynote](https://www.openscapes.org/blog/2022/08/10/quarto-keynote/) at RStudio Conference 2022. Beautiful slides created using Quarto!
+-   [A Quarto tip a day](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/#category=)
+-   Quarto on [Twitter](https://twitter.com/quarto_pub?lang=en)
+-   [Quarto Gallery](https://quarto.org/docs/gallery/)
+
+
+
+
