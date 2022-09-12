@@ -73,8 +73,6 @@ ggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +
 
 ```
 
-
-
 ## How it works?
 
 -   Quarto is a command line interface (CLI) that renders plain text formats (.qmd, .rmd, .md) into static PDF/Word/HTML reports, books, websites, presentations and more
@@ -118,8 +116,6 @@ I hope this will all make sense with the demonstration.
 
 ![](images/horst_quarto_penguins_teach.png){fig-alt="teaching-quarto"}
 
-
-
 ## Set up Quarto
 
 -   Make sure you are using the most up-to-date version of RStudio.
@@ -136,7 +132,3 @@ I hope this will all make sense with the demonstration.
 -   [A Quarto tip a day](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/#category=)
 -   Quarto on [Twitter](https://twitter.com/quarto_pub?lang=en)
 -   [Quarto Gallery](https://quarto.org/docs/gallery/)
-
-
-
-
